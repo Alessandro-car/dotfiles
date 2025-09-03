@@ -72,3 +72,8 @@ alias ll='ls -l'
 
 # Shell integrations
 eval "$(fzf --zsh)"
+
+# Add Homebrew
+echo >> /home/alessandro/.zshrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/alessandro/.zshrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
