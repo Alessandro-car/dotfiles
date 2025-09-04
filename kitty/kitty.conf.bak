@@ -1,7 +1,13 @@
-# font_family Iosevka Regular
+font_family Iosevka NFM
+bold_font auto
+italic_font auto
+bold_italic_font auto
 font_size 12
+disable_ligatures always
 
-cursor_shap block
+cursor_shape block
+shell_integration no-cursor
+
 
 enable_audio_bell no
 
@@ -9,13 +15,13 @@ draw_minimal_borders yes
 
 
 # BEGIN_KITTY_THEME
-# Atelier Dune Dark
+# Base2Tone Heath Dark
 include current-theme.conf
 # END_KITTY_THEME
 
 # BEGIN_KITTY_FONTS
-font_family      family="Iosevka Fixed"
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
+#font_family      IosevkaNerdFontMono-Regular
+#bold_font        auto
+#italic_font      auto
+#bold_italic_font auto
 # END_KITTY_FONTS
