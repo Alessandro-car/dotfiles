@@ -23,21 +23,22 @@ require("lazy").setup({
 			vim.cmd[[colorscheme everforest]]
 		--[[end
 	},]]
-	{
+	--[[{
 		"metalelf0/base16-black-metal-scheme",
 		config = function()
+			vim.o.background = "dark"
 			vim.cmd.colorscheme("base16-black-metal-nile")
 		end,
 		priority = 1000
-	},
-	--[[{
+	},--]]
+	{
 		"blazkowolf/gruber-darker.nvim",
 		config = function()
 			vim.o.background = "dark"
 			vim.cmd.colorscheme("gruber-darker")
 		end,
 		priority = 1000
-	},--]]
+	},
 	--[[{
 		"ellisonleao/gruvbox.nvim",
 		config = function()
@@ -74,7 +75,6 @@ require("lazy").setup({
 	-- Icons
 	{
 		"nvim-tree/nvim-web-devicons",
-		lazy = true
 	},
 	--Mini Icons
 	{
@@ -113,7 +113,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+		build = "cmake -S. -Bbuild -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
 	},
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
@@ -136,7 +136,7 @@ require("lazy").setup({
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({
-				ensure_installed = "all",
+				ensure_installed = {},
 				sync_install = false,
 				highlight = {
 					enable = true,
@@ -155,7 +155,6 @@ require("lazy").setup({
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
-		lazy = true,
 		config = false,
 		init = function()
 			vim.g.lsp_zero_extend_cmp = 0
@@ -165,13 +164,12 @@ require("lazy").setup({
 	-- Mason
 	{
 		"williamboman/mason.nvim",
-		lazy = false,
 		config = true,
 	},
 	-- Autocompletion
 	{
 		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
+		--event = "InsertEnter",
 		dependencies = {
 			"L3MON4D3/LuaSnip",
 			"hrsh7th/cmp-buffer",
@@ -209,8 +207,9 @@ require("lazy").setup({
 		end
 	},
 	-- LSP
-	{
+	--[[{
 		"neovim/nvim-lspconfig",
+		lazy = false,
 		cmd = { "LspInfo", "LspInstall", "LspStart" },
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
@@ -259,7 +258,7 @@ require("lazy").setup({
 				}
 			})
 		end
-	},
+	},--]]
 	-- Lualine
 	{
 		"nvim-lualine/lualine.nvim",
@@ -290,7 +289,6 @@ require("lazy").setup({
 	-- Notify
 	{
 		"rcarriga/nvim-notify",
-		lazy = false
 	},
 	-- Trouble
 	{
@@ -310,10 +308,10 @@ require("lazy").setup({
 			})
 		end
 	},
-	-- Null LS
+	-- None LS
 	{
-		"jose-elias-alvarez/null-ls.nvim",
-		dependencies = {
+		"nvimtools/none-ls.nvim",
+		requires = {
 			"nvim-lua/plenary.nvim"
 		},
 		config = function()
