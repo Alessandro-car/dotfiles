@@ -1,0 +1,73 @@
+# ~/.config/starship.toml  —  minimal, maple-themed
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$python\
+$rust\
+$nodejs\
+$cmd_duration\
+$line_break\
+$character"""
+
+add_newline = true
+palette = "maple"
+
+[palettes.maple]
+red    = "#d23a1f"
+orange = "#e8923a"
+sage   = "#9fb79f"
+teal   = "#86aaa6"
+muted  = "#6b5848"
+
+[directory]
+style = "bold orange"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = "  "
+read_only_style = "red"
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = " "
+style = "teal"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "red"
+format = '([$all_status$ahead_behind]($style) )'
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕"
+untracked = "?"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+stashed = "≡"
+
+[cmd_duration]
+min_time = 2000
+style = "muted"
+format = "[$duration]($style) "
+
+[python]
+symbol = " "
+style = "sage"
+format = '[$symbol]($style) '
+
+[rust]
+symbol = " "
+style = "red"
+format = '[$symbol]($style) '
+
+[nodejs]
+symbol = " "
+style = "sage"
+format = '[$symbol]($style) '
+
+[character]
+success_symbol = "[❯](bold sage)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold orange)"

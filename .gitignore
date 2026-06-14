@@ -1,0 +1,27 @@
+# --- Secrets: never commit ---
+.ssh/
+.gnupg/
+*.key
+*.pem
+*_rsa
+*_ed25519
+.netrc
+*.env
+**/secrets*
+
+# --- Fish state (machine-specific) ---
+fish_variables
+fish_history
+**/.config/fish/fish_variables
+**/.config/fish/fish_history
+
+# --- Generated / cached ---
+.cache/
+**/.config/wal/
+colors-*.conf      # pywal-generated theme files
+*.log
+
+# --- OS / editor noise ---
+.DS_Store
+*.swp
+*~

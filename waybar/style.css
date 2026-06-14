@@ -1,0 +1,61 @@
+/* ~/.config/waybar/style.css  —  Japanese Autumn (maple) */
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+/* Pill-shaped module groups */
+#workspaces,
+#window,
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray {
+  background: #1c1510;
+  color: #e8dcc6;
+  padding: 0 12px;
+  margin: 0 3px;
+  border-radius: 10px;
+}
+
+#workspaces button {
+  color: #6b5848;
+  padding: 0 8px;
+  background: transparent;
+  border-radius: 8px;
+}
+
+#workspaces button.active {
+  color: #1c1510;
+  background: #d23a1f;
+}
+
+#workspaces button.urgent {
+  color: #1c1510;
+  background: #e8923a;
+}
+
+#workspaces button:hover {
+  color: #e8dcc6;
+  background: #2e2118;
+}
+
+#window      { color: #b5a489; }
+#clock       { color: #e8923a; }
+#cpu         { color: #d23a1f; }
+#memory      { color: #9fb79f; }
+#network     { color: #86aaa6; }
+#pulseaudio  { color: #c9a96b; }
+#pulseaudio.muted { color: #6b5848; }
+
+#tray > .passive { -gtk-icon-effect: dim; }
